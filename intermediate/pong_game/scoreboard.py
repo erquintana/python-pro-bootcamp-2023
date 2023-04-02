@@ -22,6 +22,7 @@ class Scoreboard(Turtle):
         self.color("white")
         self.penup()
         self.clear()
+        self.color("black")
         self.goto(-GAMEBOARD_W/4, 270)
         # Display the initial score for the left player
         self.write(f"SCORE L player: 0", False, align=ALIGNMENT,
