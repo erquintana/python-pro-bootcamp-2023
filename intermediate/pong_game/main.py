@@ -44,7 +44,7 @@ def main():
     # Set up game screen
     gameboard = Screen()
 
-    gameboard.setup(width=GAMEBOARD_W, height=GAMEBOARD_H)
+    gameboard.setup(width=GAMEBOARD_W+75, height=GAMEBOARD_H+75)
     gameboard.bgcolor("light steel blue")
     gameboard.title("PONG GAME")
     gameboard.tracer(0)
@@ -56,8 +56,8 @@ def main():
 
 
     # Create instances of Paddle for both players
-    paddle_R = Paddle(X=GAMEBOARD_W/2-20, Y=0)
-    paddle_L = Paddle(X=-GAMEBOARD_W/2+20, Y=0)
+    paddle_R = Paddle(X=GAMEBOARD_W/2-75, Y=0)
+    paddle_L = Paddle(X=-GAMEBOARD_W/2+75, Y=0)
 
     # Set up keyboard controls
     gameboard.listen()
@@ -72,7 +72,7 @@ def main():
     # Initialize ball movement variables
     speed_x = 1
     speed_y = 1
-    ball.heading = random.randrange(0, 360, 45)
+    ball.heading = random.randrange(0, 180, 45)
 
     # Game loop
     while(game_is_on):

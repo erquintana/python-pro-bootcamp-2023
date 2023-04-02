@@ -23,11 +23,11 @@ class Scoreboard(Turtle):
         self.penup()
         self.clear()
         self.color("black")
-        self.goto(-GAMEBOARD_W/4, 270)
+        self.goto(-GAMEBOARD_W/4, 260)
         # Display the initial score for the left player
         self.write(f"SCORE L player: 0", False, align=ALIGNMENT,
                    font=(FONT_TYPE, FONT_SIZE, FORT_STYLE))
-        self.goto(GAMEBOARD_W/4, 270)
+        self.goto(GAMEBOARD_W/4, 260)
         # Display the initial score for the right player
         self.write(f"SCORE R player: 0", False, align=ALIGNMENT,
                    font=(FONT_TYPE, FONT_SIZE, FORT_STYLE))
@@ -36,7 +36,7 @@ class Scoreboard(Turtle):
     def update_score(self, score_l, score_r):
         """
         Update the scores displayed on the scoreboard.
-
+        
         :param score_l: The score of the left player.
         :param score_r: The score of the right player.
         """
