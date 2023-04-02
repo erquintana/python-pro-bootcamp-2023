@@ -72,8 +72,8 @@ def main():
     # Initialize ball movement variables
     speed_x = 1
     speed_y = 1
-    ball.heading = random.randrange(0, 180, 45)
-
+    speed_x = random.randrange(1, 2, 1)
+    speed_y = random.randrange(1, 2, 1)
     # Game loop
     while(game_is_on):
         # Get current ball position
@@ -104,8 +104,13 @@ def main():
 
             # Reset ball position and update scoreboard
             ball.setpos(0, 0)
+            speed_x = random.randrange(-2, 2, 1)
+            speed_y = random.randrange(-3, 3, 1)
             scoreboard.goal_done(score_l=score_L, score_r=score_R)
-
+            if(speed_x == 0):
+                speed_x += 1
+            if(speed_y == 0):
+                speed_y -= 1
         # Check paddle collisions
         else:
             hit_on_paddle = ball.check_paddle_hit(

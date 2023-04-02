@@ -106,7 +106,7 @@ class Ball(Turtle):
         """Detects collision with top or bottom walls."""
         if self.pos()[1] >= GAMEBOARD_H/2-10:
             return True, "up_hit"
-        elif self.pos()[1] <= -GAMEBOARD_H/2-10:
+        elif self.pos()[1] <= -GAMEBOARD_H/2+10:
             return True, "down_hit"
         else:
             return False, None
@@ -130,10 +130,10 @@ class Ball(Turtle):
         d_x_R = self.pos()[0] == pad_pos_R[0]-10
         d_x_L = self.pos()[0] == pad_pos_L[0]+10
 
-        d_y_R = (self.pos()[1] < pad_pos_R[1] + 20 * PADDLE_H-40 and
-                 self.pos()[1] > pad_pos_R[1] - 20 * PADDLE_H+40)
-        d_y_L = (self.pos()[1] < pad_pos_L[1] + 20 * PADDLE_H-40 and
-                 self.pos()[1] > pad_pos_L[1] - 20 * PADDLE_H+40)
+        d_y_R = (self.pos()[1] < pad_pos_R[1] + 20 * PADDLE_H-35 and
+                 self.pos()[1] > pad_pos_R[1] - 20 * PADDLE_H+35)
+        d_y_L = (self.pos()[1] < pad_pos_L[1] + 20 * PADDLE_H-35 and
+                 self.pos()[1] > pad_pos_L[1] - 20 * PADDLE_H+35)
 
         if d_x_R and d_y_R:
             return "hit_R_paddle"
