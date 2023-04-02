@@ -2,7 +2,7 @@
 from scoreboard import Scoreboard
 from ball import Ball
 from paddle import Paddle
-from turtle import Screen
+from turtle import Screen, Turtle
 import time
 import random
 import configFile
@@ -12,6 +12,29 @@ GAMEBOARD_W = configFile.GAMEBOARD_W
 GAMEBOARD_H = configFile.GAMEBOARD_H
 SLEEP_TIME = configFile.SLEEP_TIME
 
+def draw_board():
+    liner = Turtle()
+    liner.hideturtle()
+    liner.penup()
+    liner.goto(0, -GAMEBOARD_H/2)
+    liner.color("white")
+    liner.pensize(6)
+    space = 0
+    while(liner.pos()[1] < GAMEBOARD_H/2):
+        liner.pendown()
+        liner.goto(0, -GAMEBOARD_H/2+space*GAMEBOARD_H/25)
+        liner.penup()
+        liner.goto(0, -GAMEBOARD_H/2+(space+1)*GAMEBOARD_H/25)
+        space += 2
+    liner.pendown()
+    liner.pensize(10)
+    liner.goto(-GAMEBOARD_W/2,GAMEBOARD_H/2)
+    liner.goto(-GAMEBOARD_W/2,-GAMEBOARD_H/2)
+    liner.goto(GAMEBOARD_W/2,-GAMEBOARD_H/2)
+    liner.goto(GAMEBOARD_W/2,GAMEBOARD_H/2)
+    liner.goto(0,GAMEBOARD_H/2)
+
+
 def main():
     """Main function that runs the Pong game."""
     # Initialize scores for both players
@@ -20,6 +43,7 @@ def main():
 
     # Set up game screen
     gameboard = Screen()
+
     gameboard.setup(width=GAMEBOARD_W, height=GAMEBOARD_H)
     gameboard.bgcolor("light steel blue")
     gameboard.title("PONG GAME")
@@ -28,6 +52,8 @@ def main():
     # Create instances of Ball and Scoreboard
     ball = Ball()
     scoreboard = Scoreboard()
+    draw_board()
+
 
     # Create instances of Paddle for both players
     paddle_R = Paddle(X=GAMEBOARD_W/2-20, Y=0)

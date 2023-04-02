@@ -39,10 +39,10 @@ class Scoreboard(Turtle):
         :param score_l: The score of the left player.
         :param score_r: The score of the right player.
         """
-        self.goto(GAMEBOARD_W/4, 270)
+        self.goto(GAMEBOARD_W/4, 260)
         self.write(f"SCORE R player: {score_r}", False, align=ALIGNMENT,
                    font=(FONT_TYPE, FONT_SIZE, FORT_STYLE))
-        self.goto(-GAMEBOARD_W/4, 270)
+        self.goto(-GAMEBOARD_W/4, 260)
         self.write(f"SCORE R player: {score_l}", False, align=ALIGNMENT,
                    font=(FONT_TYPE, FONT_SIZE, FORT_STYLE))
 
@@ -55,7 +55,7 @@ class Scoreboard(Turtle):
         """
         self.goto(0, 0)
         self.write(f"GOOOOAL!!! Let's go again!", False, align=ALIGNMENT,
-                   font=(FONT_TYPE, FONT_SIZE*3, FORT_STYLE))
+                   font=(FONT_TYPE, FONT_SIZE*2, FORT_STYLE))
         time.sleep(3)  # Wait for 3 seconds
         self.clear()  # Clear the screen
         self.update_score(score_l, score_r)  # Update the scoreboard with new scores

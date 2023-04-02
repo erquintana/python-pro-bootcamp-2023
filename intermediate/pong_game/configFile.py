@@ -15,5 +15,5 @@ PADDLE_W = 0.1 * PADDLE_H  # Paddle width
 # Text properties
 ALIGNMENT = "center"  # Text alignment
 FONT_TYPE = "Arial"  # Font type
-FONT_SIZE = 10  # Font size
+FONT_SIZE = 14  # Font size
 FORT_STYLE = "bold"  # Font style
