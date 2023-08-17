@@ -1,7 +1,7 @@
 # python-pro-bootcamp-2023
 Master Python by building 100 projects in 100 days. Here I Learned data science, automation, build websites, games and apps!
 
-https://intel.udemy.com/course/100-days-of-code/learn/lecture/23103754#overview
+https://udemy.com/course/100-days-of-code/learn/lecture/23103754#overview
 
 I already have expereince programming, especially with pyhton, but I want to make an space to take a bootcamp and build a portafolio. 
 
